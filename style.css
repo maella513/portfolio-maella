@@ -1,0 +1,103 @@
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #333;
+  --header-bg: #1f2937;
+  --card-bg: white;
+  --link-color: #1d4ed8;
+}
+
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #f1f1f1;
+  --header-bg: #111;
+  --card-bg: #2a2a2a;
+  --link-color: #60a5fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+header, footer {
+  background-color: var(--header-bg);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+nav a {
+  margin: 0 0.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 2rem 1rem;
+  max-width: 1000px;
+  margin: auto;
+  animation: fadeIn 1s ease-in-out;
+}
+
+h1, h2 {
+  color: var(--text-color);
+}
+
+.skill, .project, .experience {
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.skill:hover, .project:hover, .experience:hover {
+  transform: scale(1.02);
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  padding: 0.4rem 1rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 600px) {
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+
+  section {
+    padding: 1rem;
+  }
+}
