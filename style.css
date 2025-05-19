@@ -1,17 +1,18 @@
 :root {
-  --bg-color: #f9f9f9;
-  --text-color: #333;
-  --header-bg: #1f2937;
-  --card-bg: white;
-  --link-color: #1d4ed8;
+  --bg-color: #f3f4f6;
+  --text-color: #1f2937;
+  --header-gradient: linear-gradient(135deg, #4f46e5, #06b6d4);
+  --card-bg: #ffffff;
+  --link-color: #06b6d4;
+  --highlight: #a855f7;
 }
 
 body.dark-mode {
-  --bg-color: #1a1a1a;
-  --text-color: #f1f1f1;
-  --header-bg: #111;
-  --card-bg: #2a2a2a;
-  --link-color: #60a5fa;
+  --bg-color: #1f1f1f;
+  --text-color: #f9fafb;
+  --card-bg: #2c2c2c;
+  --link-color: #38bdf8;
+  --header-gradient: linear-gradient(135deg, #3730a3, #0e7490);
 }
 
 * {
@@ -20,21 +21,25 @@ body.dark-mode {
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background: var(--bg-color);
   color: var(--text-color);
   scroll-behavior: smooth;
 }
 
 header, footer {
-  background-color: var(--header-bg);
+  background: var(--header-gradient);
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
+}
+
+nav {
+  margin-top: 1rem;
 }
 
 nav a {
-  margin: 0 0.5rem;
+  margin: 0 0.6rem;
   color: white;
   text-decoration: none;
   font-weight: bold;
@@ -48,24 +53,32 @@ section {
   padding: 2rem 1rem;
   max-width: 1000px;
   margin: auto;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 0.8s ease-in-out;
 }
 
-h1, h2 {
-  color: var(--text-color);
+h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+}
+
+h2 {
+  color: var(--highlight);
+  border-left: 6px solid var(--highlight);
+  padding-left: 12px;
 }
 
 .skill, .project, .experience {
   background: var(--card-bg);
   padding: 1rem;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .skill:hover, .project:hover, .experience:hover {
   transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0, 174, 239, 0.3);
 }
 
 a {
@@ -77,13 +90,20 @@ a:hover {
 }
 
 #theme-toggle {
-  background: none;
-  border: 1px solid white;
+  background: transparent;
+  border: 2px solid white;
   color: white;
   padding: 0.4rem 1rem;
-  margin: 0.5rem;
+  margin-top: 0.6rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+#theme-toggle:hover {
+  background: white;
+  color: #1f2937;
 }
 
 @keyframes fadeIn {
@@ -94,10 +114,10 @@ a:hover {
 @media screen and (max-width: 600px) {
   nav a {
     display: block;
-    margin: 0.5rem 0;
+    margin: 0.4rem 0;
   }
 
   section {
-    padding: 1rem;
+    padding: 1.2rem;
   }
 }
